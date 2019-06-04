@@ -3900,3 +3900,60 @@ msgstr "是"
 
 msgid "« Back"
 msgstr "« 后退"
+
+msgid "RemoteCtrl"
+msgstr "远程控制"
+
+msgid "Communicate with Server by TCP"
+msgstr "与远程服务器进行通信，上报状态及接受控制指令"
+
+msgid "Remote Configuration"
+msgstr "参数设定"
+
+msgid "remoteipport"
+msgstr "选项"
+
+msgid "Provide Remote Ctrl"
+msgstr "使能控制"
+
+msgid "Dev ID"
+msgstr "设备ID"
+
+msgid "Remote Ip"
+msgstr "远程IP地址"
+
+msgid "Remote Port"
+msgstr "远程端口"
+
+msgid "GPS Info"
+msgstr "GPS信息"
+
+msgid "AGPS Info"
+msgstr "AGPS信息"
+
+msgid "Online Info"
+msgstr "在线状态"
+
+msgid "SimCard Status"
+msgstr "SIM卡状态"
+
+msgid "Signal Strength"
+msgstr "4G信号强度"
+
+msgid "WIFI UP"
+msgstr "WIFI上连AP信息配置，最多3个"
+
+msgid "every line is a ap info,eg: ssid key"
+msgstr "每行表示一个AP信息，示例：名字 密码，中间以空格分开"
+
+msgid "IPC args"
+msgstr "参数设定"
+
+msgid "Setting IPC args"
+msgstr "设定IPC参数"
+
+msgid "IPC Ipaddr"
+msgstr "IP地址"
+
+msgid "IPC Port"
+msgstr "端口"

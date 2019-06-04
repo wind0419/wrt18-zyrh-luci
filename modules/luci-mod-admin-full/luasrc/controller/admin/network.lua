@@ -144,6 +144,19 @@ function index()
 		page = entry({"admin", "network", "diag_traceroute6"}, post("diag_traceroute6"), nil)
 		page.leaf = true
 --	end
+		page = node("admin", "network", "remote")
+		page.target = cbi("admin_network/remote")
+		page.title  = _("RemoteCtrl")
+		page.order  = 70
+		
+		page = entry({"admin", "network", "wifi_up"}, form("admin_network/wifi_up"), _("WIFI UP"), 80)
+		page.leaf = true
+		
+		page = node("admin", "network", "ipc")
+		page.target = cbi("admin_network/ipc")
+		page.title  = _("IPC args")
+		page.order  = 90
+		
 end
 
 function wifi_join()

@@ -178,17 +178,17 @@ else
 
 	function ch.cfgvalue(self, section)
 		return {
-			m:get(section, "hwmode") or "",
+			m:get(section, "hwmode") or "11ng",
 			m:get(section, "channel") or "auto",
-			m:get(section, "htmode") or ""
+			m:get(section, "htmode") or "HT40"
 		}
 	end
 
 	function ch.formvalue(self, section)
 		return {
-			m:formvalue(self:cbid(section) .. ".band") or (hw_modes.g and "11g" or "11a"),
+			m:formvalue(self:cbid(section) .. ".band") or (hw_modes.g and "11ng" or "11ng"),
 			m:formvalue(self:cbid(section) .. ".channel") or "auto",
-			m:formvalue(self:cbid(section) .. ".htmode") or ""
+			m:formvalue(self:cbid(section) .. ".htmode") or "HT40"
 		}
 	end
 
@@ -613,6 +613,8 @@ end
 encr:value("none", "No Encryption")
 encr:value("wep-open",   translate("WEP Open System"), {mode="ap"}, {mode="sta"}, {mode="ap-wds"}, {mode="sta-wds"}, {mode="adhoc"}, {mode="ahdemo"}, {mode="wds"})
 encr:value("wep-shared", translate("WEP Shared Key"),  {mode="ap"}, {mode="sta"}, {mode="ap-wds"}, {mode="sta-wds"}, {mode="adhoc"}, {mode="ahdemo"}, {mode="wds"})
+encr:value("psk", "WPA-PSK", {mode="ap"}, {mode="sta"}, {mode="ap-wds"}, {mode="sta-wds"}, {mode="adhoc"})
+encr:value("psk2", "WPA2-PSK", {mode="ap"}, {mode="sta"}, {mode="ap-wds"}, {mode="sta-wds"}, {mode="adhoc"})
 
 if hwtype == "mac80211" or hwtype == "prism2" then
 	local supplicant = fs.access("/usr/sbin/wpa_supplicant")
