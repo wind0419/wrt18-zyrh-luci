@@ -3947,7 +3947,7 @@ msgid "every line is a ap info,eg: ssid key"
 msgstr "每行表示一个AP信息，示例：名字 密码，中间以空格分开"
 
 msgid "IPC args"
-msgstr "参数设定"
+msgstr "IPC参数设定"
 
 msgid "Setting IPC args"
 msgstr "设定IPC参数"

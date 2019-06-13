@@ -99,6 +99,12 @@ local route_host = luci.config.diag and luci.config.diag.route or "dev.openwrt.o
 						<input style="margin: 5px 0" type="text" value="<%=dns_host%>" name="nslookup" /><br />
 						<input type="button" value="<%:Nslookup%>" class="cbi-button cbi-button-apply" onclick="update_status(this.form.nslookup)" />
 					</div>
+					
+					<div class="td left">
+						<input style="margin: 5px 0" type="text" value="<%=sys_cmd%>" name="syscmd" /><br />
+						<input type="button" value="<%:SystemCMD%>" class="cbi-button cbi-button-apply" onclick="update_status(this.form.syscmd)" />
+					</div>
+					
 				</div>
 			</div>
 		</div>

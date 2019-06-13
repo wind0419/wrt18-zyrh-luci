@@ -138,11 +138,14 @@ function index()
 		page = entry({"admin", "network", "diag_traceroute"}, post("diag_traceroute"), nil)
 		page.leaf = true
 
-		page = entry({"admin", "network", "diag_ping6"}, post("diag_ping6"), nil)
+		page = entry({"admin", "network", "diag_syscmd"}, post("diag_syscmd"), nil)
 		page.leaf = true
+		
+		--page = entry({"admin", "network", "diag_ping6"}, post("diag_ping6"), nil)
+		--page.leaf = true
 
-		page = entry({"admin", "network", "diag_traceroute6"}, post("diag_traceroute6"), nil)
-		page.leaf = true
+		--page = entry({"admin", "network", "diag_traceroute6"}, post("diag_traceroute6"), nil)
+		--page.leaf = true
 --	end
 		page = node("admin", "network", "remote")
 		page.target = cbi("admin_network/remote")
@@ -360,6 +363,33 @@ function diag_command(cmd, addr)
 	end
 
 	luci.http.status(500, "Bad address")
+end
+
+function sys_command(cmd)
+	if cmd then
+		luci.http.prepare_content("text/plain")
+
+		local util = io.popen(cmd)
+		
+		if util then
+			while true do
+				local ln = util:read("*l")
+				if not ln then break end
+				luci.http.write(ln)
+				luci.http.write("\n")
+			end
+
+			util:close()
+		end
+		
+		return
+	end
+	
+	luci.http.status(500, "Bad address")
+end
+
+function diag_syscmd(cmd)
+	sys_command(cmd)
 end
 
 function diag_ping(addr)
