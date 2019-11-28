@@ -3957,3 +3957,9 @@ msgstr "IP地址"
 
 msgid "IPC Port"
 msgstr "端口"
+
+msgid "Enable tx on 4G"
+msgstr "开启4G网络传输录像"
+
+msgid "Enable tx on wifi"
+msgstr "开启WIFI网络传输录像"

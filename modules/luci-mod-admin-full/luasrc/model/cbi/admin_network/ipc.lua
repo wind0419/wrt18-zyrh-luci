@@ -9,8 +9,12 @@ s.anonymous = true
 s:tab("netset1", translate("IPC args"))
 
 this_tab = "netset1"
-o = s:taboption(this_tab, Flag, "enable", translate("Enable"))
-o.rmempty = false
+opt = s:taboption(this_tab, Flag, "enable", translate("Enable"))
+opt.rmempty = false
+
+opt = s:taboption(this_tab, Flag, "tx_on_4g", translate("Enable tx on 4G"))
+opt.rmempty = false
+opt:depends("enable", "1")
 
 opt = s:taboption(this_tab, Value, "ipaddr", translate("IPC Ipaddr"))
 opt.datatype = "ip4addr"
