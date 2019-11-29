@@ -19,18 +19,17 @@ opt.rmempty = false
 opt:depends("enable", "1")
 
 opt = s:taboption(this_tab, Value, "ipaddr", translate("IPC Ipaddr"))
-opt.rmempty = false
 opt.datatype = "ip4addr"
 opt.placeholder = "192.168.1.10"
 opt:depends("enable", "1")
 
 port = s:taboption(this_tab, Value, "port", translate("IPC Port"))
-opt.rmempty = false
 port.placeholder = "34567"
 port.datatype    = "port"
 port:depends("enable", "1")
 
 opt = s:taboption(this_tab, ListValue, "search_type", translate("Video Type"))
+opt:depends("enable", "1")
 opt.default = 1
 opt:value(0, translate("ALL Video"))
 opt:value(1, translate("ALARM Video"))
@@ -38,6 +37,7 @@ opt:value(2, translate("DETECT Video"))
 opt:value(3, translate("REGULAR Video"))
 opt:value(4, translate("MANUAL Video"))
 opt:value(5, translate("KEY Video"))
+
 
 --- HTTP preview  ---
 html_h = [[
