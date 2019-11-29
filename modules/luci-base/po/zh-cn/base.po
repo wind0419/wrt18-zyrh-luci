@@ -3950,7 +3950,7 @@ msgid "IPC args"
 msgstr "IPC参数设定"
 
 msgid "Setting IPC args"
-msgstr "设定IPC参数"
+msgstr "使能后，在4G网络下实时传输，充电时开启WIFI传输"
 
 msgid "IPC Ipaddr"
 msgstr "IP地址"
@@ -3959,7 +3959,26 @@ msgid "IPC Port"
 msgstr "端口"
 
 msgid "Enable tx on 4G"
-msgstr "开启4G网络传输录像"
+msgstr "开启4G网络下传输录像"
 
-msgid "Enable tx on wifi"
-msgstr "开启WIFI网络传输录像"
+msgid "Video Type"
+msgstr "录像类型"
+
+msgid "ALL Video"
+msgstr "全部录像"
+
+msgid "ALARM Video"
+msgstr "外部报警录像"
+
+msgid "DETECT Video"
+msgstr "视频侦测录像"
+
+msgid "REGULAR Video"
+msgstr "普通录像"
+
+msgid "MANUAL Video"
+msgstr "手动录像"
+
+msgid "KEY Video"
+msgstr "关键录像"
+
