@@ -1,0 +1,27 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid "ipc osd service is working to get/set ipc osd text"
+msgstr "读取及自动更新IPC文字叠加内容"
+
+msgid "IPC-OSD"
+msgstr "IPC文字叠加"
+
+msgid "Enable ipc-osd"
+msgstr "开启OSD自动刷新"
+
+msgid "ipc ip addr"
+msgstr "IPC登录地址"
+
+msgid "ipc port"
+msgstr "IPC登录端口"
+
+msgid "Enabled"
+msgstr "开启"
+
+msgid "osd enabled"
+msgstr "开启OSD显示"
+
+msgid "Flush per minute"
+msgstr "OSD刷新间隔（分钟）"
+

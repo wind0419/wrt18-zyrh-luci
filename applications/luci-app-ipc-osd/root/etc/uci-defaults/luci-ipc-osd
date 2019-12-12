@@ -1,0 +1,13 @@
+#!/bin/sh
+
+exit 0
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@ipc-osd[-1]
+	add ucitrack ipc-osd
+	set ucitrack.@ipc-osd[-1].init=ipc-osd
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0
