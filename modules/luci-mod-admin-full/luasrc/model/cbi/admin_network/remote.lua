@@ -53,7 +53,7 @@ end
 
 local apply = luci.http.formvalue("cbi.apply")
 if(apply) then
-	io.popen("/etc/init.d/net4g restart &")
+	io.popen("/etc/init.d/net4g_svr restart &")
 end
 
 return m
