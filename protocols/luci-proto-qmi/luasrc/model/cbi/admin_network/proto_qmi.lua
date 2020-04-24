@@ -30,7 +30,7 @@ username = section:taboption("general", Value, "username", translate("PAP/CHAP u
 
 
 password = section:taboption("general", Value, "password", translate("PAP/CHAP password"))
-password.password = true
+
 
 auth = section:taboption("general", Value, "auth", translate("Authentication Type"))
 auth:value("", translate("-- Please choose --"))
@@ -38,6 +38,8 @@ auth:value("both", "PAP/CHAP (both)")
 auth:value("pap", "PAP")
 auth:value("chap", "CHAP")
 auth:value("none", "NONE")
+
+priv = section:taboption("general", Flag, "privdial", translate("private dial"))
 
 if luci.model.network:has_ipv6() then
     ipv6 = section:taboption("advanced", Flag, "ipv6", translate("Enable IPv6 negotiation"))

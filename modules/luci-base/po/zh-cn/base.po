@@ -4005,3 +4005,6 @@ msgstr "开启OSD显示"
 
 msgid "Flush per minute"
 msgstr "OSD刷新间隔（分钟）"
+
+msgid "private dial"
+msgstr "开启私网拨号"
