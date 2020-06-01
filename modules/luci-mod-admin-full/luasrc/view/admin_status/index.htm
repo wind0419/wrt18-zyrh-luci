@@ -20,6 +20,7 @@
 	local unameinfo = nixio.uname() or { }
 
 	local signum = fs.readfile("/tmp/sig") or "0"
+	local ltesigval = fs.readfile("/tmp/lte_rsrp_sig") or "0"
 	local selfver = fs.readfile("/etc/Version") or "V0"
 	local simcard = fs.readfile("/tmp/sim-info") or "Init..."
 	
@@ -427,6 +428,7 @@
 				<p><em><%:Collecting data...%></em></p>
 			</div>
 		</div>
+		<div class="tr"><div class="td left" width="33%"><%:Ltesig%></div><div class="td left"><%=pcdata(ltesigval)%></div></div>
 		<div class="tr"><div class="td left" width="33%"><%:Uptime%></div><div class="td left" id="uptime">-</div></div>
 		<div class="tr"><div class="td left" width="33%"><%:Load Average%></div><div class="td left" id="loadavg">-</div></div>
 	</div>
