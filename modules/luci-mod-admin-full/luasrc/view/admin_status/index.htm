@@ -20,10 +20,11 @@
 	local unameinfo = nixio.uname() or { }
 
 	local signum = fs.readfile("/tmp/sig") or "0"
-	local ltesigval = fs.readfile("/tmp/lte_rsrp_sig") or "0"
+	local rsrp_val = fs.readfile("/tmp/lte_rsrp_sig") or "0"
 	local selfver = fs.readfile("/etc/Version") or "V0"
 	local simcard = fs.readfile("/tmp/sim-info") or "Init..."
-	
+	local nettype = fs.readfile("/tmp/qmi_net_print") or "Init..."
+
 	local meminfo = sysinfo.memory or {
 		total = 0,
 		free = 0,
@@ -53,6 +54,7 @@
 		local rv = {
 			uptime     = sysinfo.uptime or 0,
 			localtime  = signum,
+			ltesigval  = rsrp_val,
 			loadavg    = sysinfo.load or { 0, 0, 0 },
 			memory     = meminfo,
 			swap       = swapinfo,
@@ -361,6 +363,23 @@
 			if (e = document.getElementById('localtime'))
 				e.innerHTML = String.format('<img src="%s" />',iconsig);
 
+			sigint = parseInt(info.ltesigval) || 0;
+			if(sigint == 0)
+				iconsig = "<%=resource%>/icons/signal-none.png";
+			else if(sigint > -85)
+				iconsig = "<%=resource%>/icons/signal-75-100.png";
+			else if(sigint > -95)
+				iconsig = "<%=resource%>/icons/signal-50-75.png";
+			else if (sigint > -105)
+				iconsig = "<%=resource%>/icons/signal-25-50.png";
+			else if (sigint > -115)
+				iconsig = "<%=resource%>/icons/signal-0-25.png";
+			else
+			    iconsig = "<%=resource%>/icons/signal-none.png";
+
+			if (e = document.getElementById('ltesig'))
+				e.innerHTML = String.format('<img src="%s" />',iconsig);
+
 			if (e = document.getElementById('uptime'))
 				e.innerHTML = String.format('%t', info.uptime);
 
@@ -423,12 +442,17 @@
 		<!--div class="tr"><div class="td left" width="33%"><%:Local Time%></div><div class="td left" id="localtime">-</div></div-->
 
 		<div class="tr"><div class="td left" width="33%"><%:SimCard Status%></div><div class="td left"><%=pcdata(simcard)%></div></div>
-		<div class="tr"><div class="td left" width="33%"><%:Signal Strength%></div>
+		<div class="tr"><div class="td left" width="33%"><%:Net Status%></div><div class="td left"><%=pcdata(nettype)%></div></div>
+		<div class="tr"><div class="td left" width="33%"><%:GSM Signal Strength%></div>
 			<div class="td left" id="localtime">
 				<p><em><%:Collecting data...%></em></p>
 			</div>
 		</div>
-		<div class="tr"><div class="td left" width="33%"><%:Ltesig%></div><div class="td left"><%=pcdata(ltesigval)%></div></div>
+		<div class="tr"><div class="td left" width="33%"><%:LTE Signal Strength%></div>
+			<div class="td left" id="ltesig">
+				<p><em><%:Collecting data...%></em></p>
+			</div>
+		</div>
 		<div class="tr"><div class="td left" width="33%"><%:Uptime%></div><div class="td left" id="uptime">-</div></div>
 		<div class="tr"><div class="td left" width="33%"><%:Load Average%></div><div class="td left" id="loadavg">-</div></div>
 	</div>

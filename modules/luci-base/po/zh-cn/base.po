@@ -3937,7 +3937,13 @@ msgstr "在线状态"
 msgid "SimCard Status"
 msgstr "SIM卡状态"
 
-msgid "Signal Strength"
+msgid "Net Status"
+msgstr "注册网络"
+
+msgid "GSM Signal Strength"
+msgstr "2G信号强度"
+
+msgid "LTE Signal Strength"
 msgstr "4G信号强度"
 
 msgid "WIFI UP"
