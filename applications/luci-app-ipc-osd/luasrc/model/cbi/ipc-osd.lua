@@ -30,6 +30,9 @@ password = section_gen:option(Value, "password", translate("Password"))
     password.password = true
     password.optional = false
 
+gps_enabled = section_gen:option(Flag, "gps_enabled", translate("gps enabled"))
+    gps_enabled:depends("enabled", "1")
+
 osd_enabled = section_gen:option(Flag, "osd_enabled", translate("osd enabled"))
     osd_enabled:depends("enabled", "1")
 

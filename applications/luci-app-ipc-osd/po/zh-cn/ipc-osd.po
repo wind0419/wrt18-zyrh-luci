@@ -22,6 +22,9 @@ msgstr "开启"
 msgid "osd enabled"
 msgstr "开启OSD显示"
 
+msgid "gps enabled"
+msgstr "开启GPS更新"
+
 msgid "Flush per minute"
 msgstr "OSD刷新间隔（分钟）"
 
