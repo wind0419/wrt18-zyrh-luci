@@ -3990,3 +3990,7 @@ msgstr "关键录像"
 
 msgid "private dial"
 msgstr "开启私网拨号"
+
+msgid "upload_period"
+msgstr "上报间隔(秒)"
+

@@ -26,6 +26,12 @@ opt.placeholder = "23509"
 opt.datatype    = "port"
 opt:depends("enable", "1")
 
+opt = s:taboption(this_tab, Value, "upload_period", translate("upload_period"))
+opt:depends("enable", "1")
+opt.datatype = "and(uinteger, min(1))"
+opt.placeholder = "30"
+opt.optional = false
+
 opt = s:taboption(this_tab, DummyValue, "gps_info", translate("GPS Info"))
 opt.default="init..."
 opt:depends("enable", "1")

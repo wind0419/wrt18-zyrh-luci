@@ -42,6 +42,27 @@ fpm = section_gen:option(Value, "osd_fpm", translate("Flush per minute"))
     fpm.placeholder = "1"
     fpm.optional = false
 
+elec_k = section_gen:option(Value, "elec_k", translate("ELEC_K"))
+    elec_k:depends("enabled", "1")
+    elec_k.optional = false
+
+elec_b = section_gen:option(Value, "elec_b", translate("ELEC_B"))
+    elec_b:depends("enabled", "1")
+    elec_b.optional = false
+
+elec_html = [[
+<div id="elecdiv">
+	<p>电压(V)  电量斜率  电量常数</p>
+	<p>20-25.5   18.18    -363.64</p>
+	<p>8-12.5    22.22    -177.78</p>
+	<p>9-12.5    28.57    -257.14</p>
+	<p>10.8-14   31.25    -337.5</p>
+</div>
+]]
+
+elec_tb = section_gen:option(DummyValue, "_dummy", elec_html)
+    elec_tb:depends("osd_enabled", "1")
+
 --text = section_gen:option(Value, "osd_content", "osd text content")
 --    text:depends("osd_enabled", "1")
 --    text.optional = false

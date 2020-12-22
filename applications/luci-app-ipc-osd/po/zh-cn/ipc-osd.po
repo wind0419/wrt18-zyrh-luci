@@ -28,3 +28,8 @@ msgstr "开启GPS更新"
 msgid "Flush per minute"
 msgstr "OSD刷新间隔（分钟）"
 
+msgid "ELEC_K"
+msgstr "电量斜率"
+
+msgid "ELEC_B"
+msgstr "电量常数"
