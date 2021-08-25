@@ -152,13 +152,13 @@ function index()
 		page.title  = _("RemoteCtrl")
 		page.order  = 70
 		
-		page = entry({"admin", "network", "wifi_up"}, form("admin_network/wifi_up"), _("WIFI UP"), 80)
-		page.leaf = true
+	--	page = entry({"admin", "network", "wifi_up"}, form("admin_network/wifi_up"), _("WIFI UP"), 80)
+	--	page.leaf = true
 		
-		page = node("admin", "network", "ipc")
-		page.target = cbi("admin_network/ipc")
-		page.title  = _("IPC args")
-		page.order  = 90
+	--	page = node("admin", "network", "ipc")
+	--	page.target = cbi("admin_network/ipc")
+	--	page.title  = _("IPC args")
+	--	page.order  = 90
 		
 end
 

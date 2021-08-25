@@ -347,13 +347,13 @@
 
 			var iconsig;
 			var sigint = parseInt(info.localtime) || -1;
-			if (sigint <= 0)
+			if (sigint < 1)
 			    iconsig = "<%=resource%>/icons/signal-none.png";
-			else if (sigint < 20)
+			else if (sigint < 8)
 			    iconsig = "<%=resource%>/icons/signal-0-25.png";
-			else if (sigint < 24)
+			else if (sigint < 16)
 			    iconsig = "<%=resource%>/icons/signal-25-50.png";
-			else if (sigint < 27)
+			else if (sigint < 24)
 			    iconsig = "<%=resource%>/icons/signal-50-75.png";
 			else if (sigint < 32)
 			    iconsig = "<%=resource%>/icons/signal-75-100.png";
