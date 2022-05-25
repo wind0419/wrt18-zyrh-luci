@@ -1,0 +1,44 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid "zyrh i1 app"
+msgstr "国网i1配置"
+
+msgid "zyrh-gi"
+msgstr "国网i1协议"
+
+msgid "Enable"
+msgstr "开启"
+
+msgid "Enable gi"
+msgstr "开启国网i1功能"
+
+msgid "Enabled"
+msgstr "使能"
+
+msgid "devid"
+msgstr "设备编号"
+
+msgid "heartbeat"
+msgstr "心跳频率(S)"
+
+msgid "start_duration"
+msgstr "摄像机启动时长(S)"
+
+msgid "capture_interval"
+msgstr "抓拍间隔(Min)"
+
+msgid "start_time"
+msgstr "抓拍起始时间"
+
+msgid "end_time"
+msgstr "抓拍结束时间"
+
+msgid "work_mode"
+msgstr "工作模式"
+
+msgid "camera_status"
+msgstr "摄像机通讯状态"
+
+msgid "server_status"
+msgstr "平台注册状态"

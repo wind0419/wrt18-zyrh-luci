@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@zyrh_gi[-1]
+	add ucitrack zyrh_gi
+	set ucitrack.@zyrh_gi[-1].init=zyrh_gi
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0
